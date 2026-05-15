@@ -1,0 +1,5 @@
+# yankrich tmux binding. The literal __BIN__ below is substituted by install.sh
+# with the absolute path to the built binary. If you copy this file by hand,
+# replace __BIN__ with your binary path (e.g. ~/.local/bin/yankrich).
+
+bind-key -T copy-mode-vi Y send-keys -X copy-pipe "reattach-to-user-namespace __BIN__ '#{pane_id}' '#{selection_start_x}' '#{selection_start_y}' '#{selection_end_x}' '#{selection_end_y}' '#{rectangle_toggle}' '#{history_size}'"
